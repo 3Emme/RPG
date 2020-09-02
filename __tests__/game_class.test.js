@@ -34,5 +34,11 @@ describe('Game', () => {
     expect(player1.name).toEqual("jake")
   });
 
+  test('should add a player to an environment', () => {
+    let player1 = rpg.addPlayer("jake","lazy","human","wizard","6","40","20","60","torched","30",[],[]);
+    rpg.addEnvironment("Castle","A dusty castle, long abandoned and full of monsters and secrets.",[],[],[player1],[]);
+    expect(rpg.environments[0].players[0]).toEqual(player1);
+  })
+
 });
 
