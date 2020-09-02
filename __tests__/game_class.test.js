@@ -38,7 +38,13 @@ describe('Game', () => {
     let player1 = rpg.addPlayer("jake","lazy","human","wizard","6","40","20","60","torched","30",[],[]);
     rpg.addEnvironment("Castle","A dusty castle, long abandoned and full of monsters and secrets.",[],[],[player1],[]);
     expect(rpg.environments[0].players[0]).toEqual(player1);
-  })
+  });
+
+  test('should add a monster to an environment', () => {
+    let monster1 = rpg.addMonster("Monster Jake",1,8,500,[],[],100,[],"stats");
+    rpg.addEnvironment("Castle","A dusty castle, long abandoned and full of monsters and secrets.",[],[monster1],[],[]);
+    expect(rpg.environments[0].monsters[0]).toEqual(monster1);
+  });
 
 });
 
