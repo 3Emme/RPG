@@ -12,15 +12,15 @@ export default class Monster {
   } 
 }
 
-class Stats {
-  constructor(str,dex,con,wis,int,chr,lck) {
-    this.str = str
-    this.dex = dex
-    this.con = con
-    this.wis = wis
-    this.int = int
-    this.chr = chr
-    this.lck = lck 
+// class Stats {
+//   constructor(str,dex,con,wis,int,chr,lck) {
+//     this.str = str
+//     this.dex = dex
+//     this.con = con
+//     this.wis = wis
+//     this.int = int
+//     this.chr = chr
+//     this.lck = lck 
 
-  }
-}
+//   }
+// }

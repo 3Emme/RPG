@@ -9,6 +9,11 @@ describe('Game', () => {
     expect(RPG.monsters).toEqual([])
     expect(RPG.environments).toEqual([])
   });
+
+  test('should add a new environment', () =>{
+    const RPG = new Game([],[],[],[])
+    RPG.addEnvironment(1,1,1,1,1,1,)
+    expect(RPG.environments[0].name).toEqual(1)
+  });
 })
 
-//booya

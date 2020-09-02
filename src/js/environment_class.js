@@ -8,3 +8,8 @@ export default class Environment {
     this.exits = exits
   }  
 } 
+
+//
+//let envCastle = new Environment("Castle","A dusty castle, long abandoned and full of monsters and secrets.",[],[],[],[])
+//   
+// 
