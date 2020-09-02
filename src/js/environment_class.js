@@ -9,7 +9,5 @@ export default class Environment {
   }  
 } 
 
-//
-//let envCastle = new Environment("Castle","A dusty castle, long abandoned and full of monsters and secrets.",[],[],[],[])
-//   
-// 
+
+// let envCastle = new Environment("Castle","A dusty castle, long abandoned and full of monsters and secrets.",[],[],[],[])
