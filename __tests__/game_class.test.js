@@ -46,5 +46,11 @@ describe('Game', () => {
     expect(rpg.environments[0].monsters[0]).toEqual(monster1);
   });
 
+  test('should add an item to a player', () => {
+    let item1 = rpg.addItem("Taco",1,200,70,5,[],[],"rare");
+    rpg.addPlayer("jake","lazy","human","wizard","6","40","20","60","torched","30",[item1],[]);
+    expect(rpg.addPlayer[0].item[0]).toEqual(item1);
+  });
+
 });
 
