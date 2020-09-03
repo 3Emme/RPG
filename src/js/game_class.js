@@ -1,7 +1,7 @@
 import Environment from './environment_class.js';
 import Player from './player_class.js'; 
 import Monster from './monster_class.js'; 
-import Item from './item_class.js';
+import { Item, Weapon } from './item_class.js';
 
 
 export default class Game {
@@ -34,6 +34,13 @@ export default class Game {
     let newItem = new Item(name,Id,worth,Hp,level,status,flags,rarity)
     return newItem;
   }
+
+  addWeapon(atk,dam,name,Id,worth,Hp,level,status,flags,rarity) {
+    let newWeapon = new Weapon(atk,dam,name,Id,worth,Hp,level,status,flags,rarity)
+    return newWeapon;
+  }
+
+
 
 
   // addPlayers(){}

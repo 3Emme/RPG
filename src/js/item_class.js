@@ -1,4 +1,4 @@
-export default class Item {
+export class Item {
   constructor(name,Id,worth,Hp,level,status,flags,rarity) {
     this.name = name
     this.Id = Id
@@ -13,10 +13,10 @@ export default class Item {
 
 
 
-// class Weapon extends Item {
-//   constructor(atk,dam,name,Id,worth,Hp,level,status,flags,rarity) {
-//     super(name,Id,worth,Hp,level,status,flags,rarity)
-//     this.atk = atk
-//     this.dam = dam
-//   }
-// }
+export class Weapon extends Item {
+  constructor(atk,dam,name,Id,worth,Hp,level,status,flags,rarity) {
+    super(name,Id,worth,Hp,level,status,flags,rarity)
+    this.atk = atk
+    this.dam = dam
+  }
+}

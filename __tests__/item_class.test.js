@@ -1,4 +1,4 @@
-import Item from '../src/js/item_class.js';
+import { Item } from '../src/js/item_class.js';
 
 describe('Item', () => {
 
