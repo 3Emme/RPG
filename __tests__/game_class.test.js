@@ -48,9 +48,20 @@ describe('Game', () => {
 
   test('should add an item to a player', () => {
     let item1 = rpg.addItem("Taco",1,200,70,5,[],[],"rare");
-    rpg.addPlayer("jake","lazy","human","wizard","6","40","20","60","torched","30",[item1],[]);
-    expect(rpg.addPlayer[0].item[0]).toEqual(item1);
+    let player1 = rpg.addPlayer("jake","lazy","human","wizard","6","40","20","60","torched","30",[item1],[]);    
+    expect(player1.inv[0]).toEqual(item1);
   });
 
+  // test('should add an item to a player', () => {
+  //   let item1 = rpg.addItem("Taco",1,200,70,5,[],[],"rare");
+  //   rpg.addPlayer("jake","lazy","human","wizard","6","40","20","60","torched","30",[item1],[]);
+  //   expect(rpg.addPlayer[0].item[0]).toEqual(item1);
+  // });
+
+  test('should add an item to an environment', () => {
+    let sword = rpg.addItem("Sword",1,1,10,1,[],[],"common");
+    rpg.addEnvironment("Castle","A dusty castle, long abandoned and full of monsters and secrets.",[sword],[],[],[]);
+    expect(rpg.environments[0].items[0]).toEqual(sword);
+  });
 });
 

@@ -10,3 +10,13 @@ export default class Item {
     this.rarity = rarity 
   }
 }
+
+
+
+// class Weapon extends Item {
+//   constructor(atk,dam,name,Id,worth,Hp,level,status,flags,rarity) {
+//     super(name,Id,worth,Hp,level,status,flags,rarity)
+//     this.atk = atk
+//     this.dam = dam
+//   }
+// }
