@@ -16,4 +16,9 @@ export default class Player {
     this.inv = inv
     this.equip = equip
   }
+
+  // addItem(item) {
+  //   let newItem = new Item(name,Id,worth,Hp,level,status,flags,rarity)
+  //   return newItem;
+  // }
 };

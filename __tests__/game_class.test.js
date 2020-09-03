@@ -1,10 +1,11 @@
 import Game from '../src/js/game_class.js';
 
 describe('Game', () => {
-    let rpg;  
-
-  beforeEach(() => {
-    rpg = new Game([],[],[],[])
+    let rpg; 
+    //let player2;
+    beforeEach(() => {
+      rpg = new Game([],[],[],[])
+    //player2 = rpg.addPlayer("jake,"human","wizard","6","40","20","60","torched","30",[],[],10,10,10,10,10,10,10);
   });
 
   test('Test 1 should create a game object', () =>{    
@@ -20,12 +21,12 @@ describe('Game', () => {
   });
 
   test('Test 3 should create a new player', () =>{
-    let player1 = rpg.addPlayer("jake","lazy","human","wizard","6","40","20","60","torched","30",[],[]);
+    let player1 = rpg.addPlayer("jake","human","wizard","6","40","20","60","torched","30",[],[],10,10,10,10,10,10,10);
     expect(player1.name).toEqual("jake")
   });
 
   test('Test 4 should add a player to an environment', () => {
-    let player1 = rpg.addPlayer("jake","lazy","human","wizard","6","40","20","60","torched","30",[],[]);
+    let player1 = rpg.addPlayer("jake","human","wizard","6","40","20","60","torched","30",[],[],10,10,10,10,10,10,10);
     rpg.addEnvironment("Castle","A dusty castle, long abandoned and full of monsters and secrets.",[],[],[player1],[]);
     expect(rpg.environments[0].players[0]).toEqual(player1);
   });
@@ -38,7 +39,7 @@ describe('Game', () => {
 
   test('Test 6 should add an item to a player', () => {
     let item1 = rpg.addItem("Taco",1,200,70,5,[],[],"rare");
-    let player1 = rpg.addPlayer("jake","lazy","human","wizard","6","40","20","60","torched","30",[item1],[]);    
+    let player1 = rpg.addPlayer("jake","human","wizard","6","40","20","60","torched","30",[item1],[],10,10,10,10,10,10,10);    
     expect(player1.inv[0]).toEqual(item1);
   });  
 
@@ -63,7 +64,7 @@ describe('Game', () => {
 
   test('Test 10 should add an item, a player, and a monster to an environment, with items in the player and monsters inventory', () => {
     let sword = rpg.addItem("Sword",1,1,10,1,[],[],"common");
-    let player1 = rpg.addPlayer("jake","lazy","human","wizard","6","40","20","60","torched","30",[sword],[]);
+    let player1 = rpg.addPlayer("jake","human","wizard","6","40","20","60","torched","30",[sword],[],10,10,10,10,10,10,10);
     let monster1 = rpg.addMonster("Monster Jake",1,8,500,[sword],[],100,[],"stats");
     rpg.addEnvironment("Castle","A dusty castle, long abandoned and full of monsters and secrets.",[sword],[monster1],[player1],[]);
     expect(rpg.environments[0].players[0].inv[0]).toEqual(rpg.environments[0].monsters[0].inv[0] && rpg.environments[0].items[0]);
@@ -75,6 +76,7 @@ describe('Game', () => {
     expect(armor.type).toEqual("heavy");
     expect(armor.name).toEqual("Chest plate");
   });
+
 
 
 });

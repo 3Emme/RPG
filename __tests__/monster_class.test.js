@@ -12,6 +12,6 @@ describe('Monster', () => {
     expect(monster.equip).toEqual([])
     expect(monster.mp).toEqual(1)
     expect(monster.status).toEqual([]) 
-    expect(monster.stats).toEqual("stats")     
+    expect(monster.abilityScores).toEqual("stats")     
   });
 })
