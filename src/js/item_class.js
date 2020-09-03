@@ -11,8 +11,6 @@ export class Item {
   }
 }
 
-
-
 export class Weapon extends Item {
   constructor(atk,dam,name,Id,worth,Hp,level,status,flags,rarity) {
     super(name,Id,worth,Hp,level,status,flags,rarity)

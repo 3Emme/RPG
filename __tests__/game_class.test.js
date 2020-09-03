@@ -70,5 +70,22 @@ describe('Game', () => {
     let monster1 = rpg.addMonster("Daisy",120,50,20,[rubberChicken],"money",40,[],[]);
     expect(monster1.inv[0].atk).toEqual(5);
   });
+
+  test('Test 10 should add an item, a player, and a monster to an environment, with items in the player and monsters inventory', () => {
+    let sword = rpg.addItem("Sword",1,1,10,1,[],[],"common");
+    let player1 = rpg.addPlayer("jake","lazy","human","wizard","6","40","20","60","torched","30",[sword],[]);
+    let monster1 = rpg.addMonster("Monster Jake",1,8,500,[sword],[],100,[],"stats");
+    rpg.addEnvironment("Castle","A dusty castle, long abandoned and full of monsters and secrets.",[sword],[monster1],[player1],[]);
+    expect(rpg.environments[0].players[0].inv[0]).toEqual(rpg.environments[0].monsters[0].inv[0] && rpg.environments[0].items[0]);
+  });
+
+  test('test 11 should create a armor subclass', () => {
+    let armor = rpg.addArmor(5,"heavy","Chest plate",1,1,10,1,[],[],"common");
+    expect(armor.acBonus).toEqual(5);
+    expect(armor.type).toEqual("heavy");
+    expect(armor.name).toEqual("Chest plate");
+  });
+
+
 });
 
