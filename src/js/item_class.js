@@ -20,3 +20,11 @@ export class Weapon extends Item {
     this.dam = dam
   }
 }
+
+export class Armor extends Item {
+  constructor(acBonus,type,name,Id,worth,Hp,level,status,flags,rarity) {
+    super(name,Id,worth,Hp,level,status,flags,rarity)
+    this.acBonus = acBonus  
+    this.type = type  
+  }
+}

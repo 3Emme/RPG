@@ -65,5 +65,10 @@ describe('Game', () => {
     expect(sword.name).toEqual("Sword");
   });
   
+  test('test 9 add subclass weapon inside of a monster',() => {
+    let rubberChicken = rpg.addWeapon(5,5,"Rubber chicken",1,1,10,1,[],[],"mythic rare");
+    let monster1 = rpg.addMonster("Daisy",120,50,20,[rubberChicken],"money",40,[],[]);
+    expect(monster1.inv[0].atk).toEqual(5);
+  });
 });
 
