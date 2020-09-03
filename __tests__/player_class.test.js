@@ -5,7 +5,7 @@ describe('Player', () => {
   test('should create a player object', () =>{
     const player1 = new Player([],[],[],[],[],[],[],[],[],[],[],[])
     expect(player1.name).toEqual([])
-    expect(player1.stats).toEqual([])
+    expect(player1.abilityScores).toEqual([])
     expect(player1.race).toEqual([])
     expect(player1.pclass).toEqual([])
     expect(player1.level).toEqual([])

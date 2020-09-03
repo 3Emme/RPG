@@ -1,20 +1,10 @@
 import Game from '../src/js/game_class.js';
 
 describe('Game', () => {
-    let rpg;
-  // let player1;
-  // let sword;
-  // let monsterJake;
-  // let envCastle;
+    let rpg;  
 
   beforeEach(() => {
     rpg = new Game([],[],[],[])
-    // player1 = new Player("jake","lazy","human","wizard","6","40","20","60","torched","30",[],[])
-    // player1 = rpg.addPlayer("jake","lazy","human","wizard","6","40","20","60","torched","30",[],[]);
-    // sword = new Item("Sword",1,1,10,1,[],[],"common")
-    // monsterJake = new Monster("Monster Jake",1,8,500,[sword],[],100,[],"stats")
-    // envCastle = new Environment("Castle","A dusty castle, long abandoned and full of monsters and secrets.",[],[],[],[])
-
   });
 
   test('Test 1 should create a game object', () =>{    
