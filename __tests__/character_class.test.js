@@ -12,4 +12,15 @@ describe('AbilityScores', () => {
   expect(ability1.chr).toEqual(7)
   expect(ability1.lck).toEqual(8)
   });
-})
+
+  test('test 2 should calculate an ability score modifier from raw score', () => {
+    const ability1 = new AbilityScores (7,8,9,11,12,13,14)
+    expect(ability1.scoreMod('str')).toEqual(-2)
+    expect(ability1.scoreMod('dex')).toEqual(-1)
+    expect(ability1.scoreMod('con')).toEqual(-1)
+    expect(ability1.scoreMod('wis')).toEqual(0)
+    expect(ability1.scoreMod('int')).toEqual(1)
+    expect(ability1.scoreMod('chr')).toEqual(1)
+    expect(ability1.scoreMod('lck')).toEqual(2)
+  });
+});

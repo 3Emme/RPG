@@ -18,7 +18,6 @@ export default class Player {
   }
 
   // addItem(item) {
-  //   let newItem = new Item(name,Id,worth,Hp,level,status,flags,rarity)
-  //   return newItem;
+  //   this.inv.push (item);
   // }
 };

@@ -10,6 +10,14 @@ export class AbilityScores {
   }
 
   scoreMod (score) {
-    return parseInt((this.score-10)/2);
+    //this.entries().
+    // let ability = score
+    //return parseInt((this.(eval(score))-10)/2);
+    let mod = (this[score]-10)/2
+    if (mod < 0) {
+      return Math.floor(mod)
+    } else {
+      return parseInt(mod)
+    }
   }  
 }
