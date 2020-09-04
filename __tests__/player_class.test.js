@@ -25,10 +25,17 @@ describe('Player', () => {
   });
 
   test('test 2 should add an item to a players inv', () => {
-    let player2 = new Player("jake","human","wizard","6","40","20","60","torched","30",[],[],10,10,10,10,10,10,10)
+    let player2 = rpg.addPlayer("jake","human","wizard","6","40","20","60","torched","30",[],[],10,10,10,10,10,10,10)
     let sword = rpg.addItem("Sword",1,1,10,1,[],[],"common");
-    player2.addItem(sword);
+    player2.addItemInv(sword);
     expect(player2.inv[0]).toEqual(sword);
+  });
+
+  test('test 3 should add an item to a players equip', () => {
+    let player2 = rpg.addPlayer("jake","human","wizard","6","40","20","60","torched","30",[],[],10,10,10,10,10,10,10)
+    let armor = rpg.addArmor(5,"heavy","Chest plate",1,1,10,1,[],[],"common");
+    player2.addItemEquip(armor);
+    expect(player2.equip[0]).toEqual(armor);
   });
 
 })

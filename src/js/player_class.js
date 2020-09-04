@@ -17,7 +17,11 @@ export class Player {
     this.equip = equip
   }
 
-  addItem(item) {
+  addItemInv(item) {
     this.inv.push (item);
+  }
+
+  addItemEquip(item) {
+    this.equip.push(item);
   }
 };
