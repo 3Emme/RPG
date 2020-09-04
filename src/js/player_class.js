@@ -1,7 +1,10 @@
+import { AbilityScores } from './character_class.js';
+
+
 export default class Player {
-  constructor(name,stats,race,pclass,level,xp,hp,mp,status,hunger,inv,equip) {
+  constructor(name,abilityScores,race,pclass,level,xp,hp,mp,status,hunger,inv,equip) {
     this.name = name
-    this.stats = stats
+    this.abilityScores = abilityScores
     this.race = race
     this.pclass = pclass
     this.level = level
@@ -13,19 +16,8 @@ export default class Player {
     this.inv = inv
     this.equip = equip
   }
+
+  // addItem(item) {
+  //   this.inv.push (item);
+  // }
 };
-
-//let player1Stats = new Stats(1,1,1,1,1,1,1,1)
-// let player1 = new Player(name,player1Stats,race,pclass,level,xp,hp,mp,status,hunger,inv,equip)
-
-// class Stats {
-//   constructor(str,dex,con,wis,int,chr,lck) {
-//     this.str = str
-//     this.dex = dex
-//     this.con = con
-//     this.wis = wis
-//     this.int = int
-//     this.chr = chr
-//     this.lck = lck 
-//   }
-// }
