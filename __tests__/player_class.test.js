@@ -38,4 +38,10 @@ describe('Player', () => {
     expect(player2.equip[0]).toEqual(armor);
   });
 
+  test('test 4 should check if a players ability score meets a target value or higher', () => {
+    let player2 = rpg.addPlayer("jake","human","wizard","6","40","20","60","torched","30",[],[],10,10,10,10,10,10,10)
+    expect(player2.abilityScoreCheck('str',15)).toEqual(false);
+    expect(player2.abilityScoreCheck('wis',8)).toEqual(true);
+  });
+
 })

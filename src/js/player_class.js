@@ -24,4 +24,14 @@ export class Player {
   addItemEquip(item) {
     this.equip.push(item);
   }
+
+  abilityScoreCheck(score,target) {
+    let abilityScores = this.abilityScores
+    let checked = abilityScores[score]
+    if (checked >= target){
+      return true;
+    } else {
+      return false;
+    }
+  }
 };
