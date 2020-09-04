@@ -1,8 +1,14 @@
-import Player from '../src/js/player_class.js';
+import { Player } from '../src/js/player_class.js';
+import Game from '../src/js/game_class.js';
+
 
 describe('Player', () => {
+  let rpg; 
+  beforeEach(() => {
+    rpg = new Game([],[],[],[])
+});
 
-  test('should create a player object', () =>{
+  test('test 1 should create a player object', () =>{
     const player1 = new Player([],[],[],[],[],[],[],[],[],[],[],[])
     expect(player1.name).toEqual([])
     expect(player1.abilityScores).toEqual([])
@@ -17,4 +23,12 @@ describe('Player', () => {
     expect(player1.inv).toEqual([])
     expect(player1.equip).toEqual([])
   });
+
+  test('test 2 should add an item to a players inv', () => {
+    let player2 = new Player("jake","human","wizard","6","40","20","60","torched","30",[],[],10,10,10,10,10,10,10)
+    let sword = rpg.addItem("Sword",1,1,10,1,[],[],"common");
+    player2.addItem(sword);
+    expect(player2.inv[0]).toEqual(sword);
+  });
+
 })

@@ -1,5 +1,5 @@
 import Environment from './environment_class.js';
-import Player from './player_class.js'; 
+import { Player } from './player_class.js'; 
 import Monster from './monster_class.js'; 
 import { Item, Weapon, Armor } from './item_class.js';
 import { AbilityScores } from './character_class.js';

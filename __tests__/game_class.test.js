@@ -5,7 +5,7 @@ describe('Game', () => {
     //let player2;
     beforeEach(() => {
       rpg = new Game([],[],[],[])
-    //player2 = rpg.addPlayer("jake,"human","wizard","6","40","20","60","torched","30",[],[],10,10,10,10,10,10,10);
+    //player2 = rpg.addPlayer("jake","human","wizard","6","40","20","60","torched","30",[],[],10,10,10,10,10,10,10);
   });
 
   test('Test 1 should create a game object', () =>{    
