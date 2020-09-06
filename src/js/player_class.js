@@ -35,4 +35,14 @@ export class Player {
       return false;
     }
   }
+
+  equipCheck(){
+    let totalAcBonus = 0;
+    for (let eqpiece of this.equip){
+      totalAcBonus += eqpiece.acBonus;
+      console.log(`${eqpiece.name} has an ac bonus of ${eqpiece.acBonus}, increasing total ac bonus to ${totalAcBonus}`)
+    }
+    this.baseAc += totalAcBonus;
+    console.log(`all equip has been checked, and after adding total ac is now ${this.baseAc}`)
+  }
 };
