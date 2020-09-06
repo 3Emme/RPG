@@ -92,5 +92,10 @@ describe('Game', () => {
     expect(t13d6m5 && t23d6m5 && t33d6m5).toBeGreaterThanOrEqual(8);
     expect(t13d6m5 && t23d6m5 && t33d6m5).toBeLessThanOrEqual(23);
   });
+
+  test('test 14 should generate an accurate baseAc for a player based on their abilityScore.dex value', () => {
+    let player1 = rpg.addPlayer("jake","human","wizard","6","40","20","60","torched","30",[],[],10,13,10,10,10,10,10);
+    expect(player1.baseAc).toEqual(11)
+  });
 });
 
