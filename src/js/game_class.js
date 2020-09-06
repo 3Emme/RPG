@@ -46,11 +46,13 @@ export default class Game {
   }
 
   roll(num,side,mod,adj){
+    let total;
     if (!mod){
       total = 0;
     } else {
       total = mod;
     }
+    let min;
     if (!adj){
       min = 1;
     } else {
