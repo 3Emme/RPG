@@ -15,6 +15,7 @@ export class Player {
     this.hunger = hunger
     this.inv = inv
     this.equip = equip
+    this.baseAc = 10+ abilityScores.scoreMod('dex')
   }
 
   addItemInv(item) {
