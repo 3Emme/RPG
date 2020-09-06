@@ -97,5 +97,13 @@ describe('Game', () => {
     let player1 = rpg.addPlayer("jake","human","wizard","6","40","20","60","torched","30",[],[],10,13,10,10,10,10,10);
     expect(player1.baseAc).toEqual(11)
   });
+
+  test('test 15 should update a players ac value to include the acBonus values of all items in equipment', () => {
+    let player1 = rpg.addPlayer("jake","human","wizard","6","40","20","60","torched","30",[],[],10,13,10,10,10,10,10);
+    let armor = rpg.addArmor(5,"heavy","Chest plate",1,1,10,1,[],[],"common");
+    player1.addItemEquip(armor);
+    player1.equipCheck();
+    expect(player1.baseAc).toEqual(16);
+  });
 });
 
