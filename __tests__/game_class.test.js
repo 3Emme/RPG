@@ -77,7 +77,20 @@ describe('Game', () => {
     expect(armor.name).toEqual("Chest plate");
   });
 
+  test('test 12 should roll a random number without a modifier', () => {
+    let t13d6m5 = rpg.roll(3,6);
+    let t23d6m5 = rpg.roll(3,6);
+    let t33d6m5 = rpg.roll(3,6);
+    expect(t13d6m5 && t23d6m5 && t33d6m5).toBeGreaterThanOrEqual(3);
+    expect(t13d6m5 && t23d6m5 && t33d6m5).toBeLessThanOrEqual(18);
+  });
 
-
+  test('test 13 should roll a random number and add a modifier to it', () => {
+    let t13d6m5 = rpg.roll(3,6,5);
+    let t23d6m5 = rpg.roll(3,6,5);
+    let t33d6m5 = rpg.roll(3,6,5);
+    expect(t13d6m5 && t23d6m5 && t33d6m5).toBeGreaterThanOrEqual(8);
+    expect(t13d6m5 && t23d6m5 && t33d6m5).toBeLessThanOrEqual(23);
+  });
 });
 
