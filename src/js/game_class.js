@@ -19,14 +19,12 @@ export default class Game {
     this.environments.push(newEnvironment);
   }  
   
-
   addPlayer(name,race,pclass,level,xp,hp,mp,status,hunger,inv,equip,str,dex,con,wis,int,chr,lck) {
     let abilityScores = new AbilityScores(str,dex,con,wis,int,chr,lck)
     let newPlayer = new Player(name,abilityScores,race,pclass,level,xp,hp,mp,status,hunger,inv,equip)
     return newPlayer;
   }
   
-
   addMonster(name,cr,hp,xp,inventory,equipment,mp,status,abilityScores) {
     let newMonster = new Monster(name,cr,hp,xp,inventory,equipment,mp,status,abilityScores)
     return newMonster;
@@ -42,24 +40,28 @@ export default class Game {
     return newWeapon;
   }
 
-
   addArmor(acBonus,type,name,Id,worth,Hp,level,status,flags,rarity) {
     let newArmor = new Armor(acBonus,type,name,Id,worth,Hp,level,status,flags,rarity)
     return newArmor;
   }
 
-
-
-
-  // addPlayers(){}
-
-  // initialize(){}
+  roll(num,side,mod,adj){
+    if (!mod){
+      total = 0;
+    } else {
+      total = mod;
+    }
+    if (!adj){
+      min = 1;
+    } else {
+      min = 1 + adj;
+    }
+    for (let i=0;i<num;i++){
+      let roll = ((min-1) + Math.ceil(Math.random() * (side-min + 1)));
+      total += roll;
+      console.log(`d${side} rolled: ${roll}`);
+    }
+    console.log(`${num}d${side} rolled, with a modifier of ${mod}. Total is: ${total}`);
+    return total;
+  }
 };
-
-
-
-
-
-//let RPG = new Game([],[],[],[])
-
-//booyagit 
