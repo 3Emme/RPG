@@ -44,4 +44,9 @@ describe('Player', () => {
     expect(player2.abilityScoreCheck('wis',8)).toEqual(true);
   });
 
+  test('test 5 should create a player object with a status property that is held by a new status object', () => {
+    let player2 = rpg.addPlayer("jake","human","wizard","6","40","20","60","torched","30",[],[],10,10,10,10,10,10,10)
+    expect(player2.status.hidden).toEqual(false);
+  });
+
 })
