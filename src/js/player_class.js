@@ -1,4 +1,4 @@
-import { AbilityScores } from './character_class.js';
+import { AbilityScores, Status } from './character_class.js';
 
 
 export class Player {
@@ -11,7 +11,7 @@ export class Player {
     this.xp = xp
     this.hp = hp
     this.mp = mp
-    this.status = status
+    this.status = new Status()
     this.hunger = hunger
     this.inv = inv
     this.equip = equip
