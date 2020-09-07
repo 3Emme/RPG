@@ -50,14 +50,14 @@ describe('Game', () => {
   });
 
   test('test 8 should create a weapon subclass', () => {
-    let sword = rpg.addWeapon(5,5,"Sword",1,1,10,1,[],[],"common");
+    let sword = rpg.addWeapon("mainHand",5,5,"Sword",1,1,10,1,[],[],"common");
     expect(sword.atk).toEqual(5);
     expect(sword.dam).toEqual(5);
     expect(sword.name).toEqual("Sword");
   });
   
   test('test 9 add subclass weapon inside of a monster',() => {
-    let rubberChicken = rpg.addWeapon(5,5,"Rubber chicken",1,1,10,1,[],[],"mythic rare");
+    let rubberChicken = rpg.addWeapon("mainHand",5,5,"Rubber chicken",1,1,10,1,[],[],"mythic rare");
     let monster1 = rpg.addMonster("Daisy",120,50,20,[rubberChicken],"money",40,[],[]);
     expect(monster1.inv[0].atk).toEqual(5);
   });
@@ -71,7 +71,7 @@ describe('Game', () => {
   });
 
   test('test 11 should create a armor subclass', () => {
-    let armor = rpg.addArmor(5,"heavy","Chest plate",1,1,10,1,[],[],"common");
+    let armor = rpg.addArmor("body",5,"heavy","Chest plate",1,1,10,1,[],[],"common");
     expect(armor.acBonus).toEqual(5);
     expect(armor.type).toEqual("heavy");
     expect(armor.name).toEqual("Chest plate");
@@ -100,10 +100,15 @@ describe('Game', () => {
 
   test('test 15 should update a players ac value to include the acBonus values of all items in equipment', () => {
     let player1 = rpg.addPlayer("jake","human","wizard","6","40","20","60","torched","30",[],[],10,13,10,10,10,10,10);
-    let armor = rpg.addArmor(5,"heavy","Chest plate",1,1,10,1,[],[],"common");
+    let armor = rpg.addArmor("body",5,"heavy","Chest plate",1,1,10,1,[],[],"common");
     player1.addItemEquip(armor);
     player1.equipCheck();
     expect(player1.baseAc).toEqual(16);
   });
+
+  //test for armor slots
+  //test for weapon slots
+  //test for attack methods
+  
 });
 
