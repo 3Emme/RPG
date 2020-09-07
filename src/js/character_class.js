@@ -45,3 +45,21 @@ export class Status{
     this.unconscious = false
   }
 }
+
+export class Equip{
+  constructor(){
+    this.head = [],
+    this.face = [],
+    this.torso = [],
+    this.back = [],
+    this.neck = [],
+    this.arm = [],
+    this.hand = [],
+    this.rings = [],
+    this.body = [],
+    this.waist = [],
+    this.legs = [],
+    this.mainHand = [],
+    this.offHand = []
+  }
+}
