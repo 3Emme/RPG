@@ -12,17 +12,19 @@ export class Item {
 }
 
 export class Weapon extends Item {
-  constructor(atk,dam,name,Id,worth,Hp,level,status,flags,rarity) {
+  constructor(slot,atk,dam,name,Id,worth,Hp,level,status,flags,rarity) {
     super(name,Id,worth,Hp,level,status,flags,rarity)
     this.atk = atk
     this.dam = dam
+    this.slot = slot
   }
 }
 
 export class Armor extends Item {
-  constructor(acBonus,type,name,Id,worth,Hp,level,status,flags,rarity) {
+  constructor(slot,acBonus,type,name,Id,worth,Hp,level,status,flags,rarity) {
     super(name,Id,worth,Hp,level,status,flags,rarity)
     this.acBonus = acBonus  
     this.type = type  
+    this.slot = slot
   }
 }
