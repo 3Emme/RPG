@@ -1,4 +1,4 @@
-import { AbilityScores, Status } from './character_class.js';
+import { AbilityScores, Status, Equip } from './character_class.js';
 
 
 export class Player {
@@ -14,7 +14,7 @@ export class Player {
     this.status = new Status()
     this.hunger = hunger
     this.inv = inv
-    this.equip = equip
+    this.equip = new Equip()
     this.baseAc = 10+ abilityScores.scoreMod('dex')
   }
 
@@ -23,7 +23,8 @@ export class Player {
   }
 
   addItemEquip(item) {
-    this.equip.push(item);
+    let slot = item.slot;
+    this.equip[slot].push(item);
   }
 
   abilityScoreCheck(score,target) {
