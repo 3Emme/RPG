@@ -37,10 +37,22 @@ export class Player {
     }
   }
 
+  // equipCheck(){
+  //   let totalAcBonus = 0;
+  //   for (let eqpiece of this.equip){
+  //     totalAcBonus += eqpiece.acBonus;
+  //     console.log(`${eqpiece.name} has an ac bonus of ${eqpiece.acBonus}, increasing total ac bonus to ${totalAcBonus}`)
+  //   }
+  //   this.baseAc += totalAcBonus;
+  //   console.log(`all equip has been checked, and after adding total ac is now ${this.baseAc}`)
+  // }
+
   equipCheck(){
     let totalAcBonus = 0;
-    for (let eqpiece of this.equip){
-      totalAcBonus += eqpiece.acBonus;
+    let equipArray = Object.getOwnPropertyNames(this.equip);
+    console.log(`equipArray: ${equipArray}`)
+    for (let eqpiece of equipArray){
+      totalAcBonus += equip[eqpiece].acBonus;
       console.log(`${eqpiece.name} has an ac bonus of ${eqpiece.acBonus}, increasing total ac bonus to ${totalAcBonus}`)
     }
     this.baseAc += totalAcBonus;
