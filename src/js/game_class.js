@@ -19,9 +19,9 @@ export default class Game {
     this.environments.push(newEnvironment);
   }  
   
-  addPlayer(name,race,pclass,level,xp,hp,mp,status,hunger,inv,equip,str,dex,con,wis,int,chr,lck) {
+  addPlayer(name,race,pclass,level,xp,hp,mp,hunger,inv,str,dex,con,wis,int,chr,lck) {
     let abilityScores = new AbilityScores(str,dex,con,wis,int,chr,lck)
-    let newPlayer = new Player(name,abilityScores,race,pclass,level,xp,hp,mp,status,hunger,inv,equip)
+    let newPlayer = new Player(name,abilityScores,race,pclass,level,xp,hp,mp,hunger,inv)
     return newPlayer;
   }
   
