@@ -2,7 +2,7 @@ import { AbilityScores, Status, Equip } from './character_class.js';
 
 
 export class Player {
-  constructor(name,abilityScores,race,pclass,level,xp,hp,mp,status,hunger,inv,equip) {
+  constructor(name,abilityScores,race,pclass,level,xp,hp,mp,hunger,inv) {
     this.name = name
     this.abilityScores = abilityScores
     this.race = race
