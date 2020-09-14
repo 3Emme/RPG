@@ -1,13 +1,19 @@
-export default class Monster {
-  constructor(name,cr,hp,xp,inventory,equipment,mp,status,abilityScores) {
+import {  Status, Equip, Character } from './character_class.js';
+
+export default class Monster extends Character{  
+  constructor(id,name,abilityScores,mainType,cr,hp,mp,inv,behaviors) {
+    super();
+    this.id = id, 
     this.name = name,
+    this.abilityScores = abilityScores,
+    this.type = {"main":mainType},
     this.cr = cr,
     this.hp = hp,
-    this.xp = xp,
-    this.inv = inventory,
-    this.equip = equipment,
     this.mp = mp,
-    this.status = status    
-    this.abilityScores = abilityScores    
-  } 
+    this.status = new Status(),
+    this.inv = inv,
+    this.equip = new Equip(),
+    this.baseAc = 10+ abilityScores.scoreMod('dex'),  
+    this.behaviors = behaviors 
+  }  
 }
