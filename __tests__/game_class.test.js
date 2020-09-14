@@ -56,7 +56,7 @@ describe('Game', () => {
     expect(sword.name).toEqual("Sword");
   });
   
-  test('test 9 add subclass weapon inside of a monster',() => {
+  test('test 9 add a weapon to a monsters inventory',() => {
     let sword = rpg.addWeapon("mainHand",5,5,"Sword",1,1,10,1,[],[],"common");
     monster1.addItemInv(sword);
     expect(monster1.inv[0].atk).toEqual(5);
@@ -99,11 +99,12 @@ describe('Game', () => {
   });
 
   test('test 15 should update a players ac value to include the acBonus values of all items in equipment', () => {
-    let player1 = rpg.addPlayer("jake","human","wizard","6","40","20","60","torched","30",[],[],10,13,10,10,10,10,10);
+    let player15 = rpg.addPlayer("jake","human","wizard","6","40","20","60","30",[],10,13,10,10,10,10,10);
     let armor = rpg.addArmor("body",5,"heavy","Chest plate",1,1,10,1,[],[],"common");
-    player1.addItemEquip(armor);
-    player1.equipCheck();
-    expect(player1.baseAc).toEqual(16);
+    console.log(`armor.acBonus: ${armor.acBonus}`)
+    player15.addItemEquip(armor);
+    player15.equipCheck();
+    expect(player15.baseAc).toEqual(16);
   });
 
   //test for armor slots
