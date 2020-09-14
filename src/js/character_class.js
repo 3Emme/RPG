@@ -86,24 +86,30 @@ export class Character {
       }
     }
 
-    equipCheck(){ ////actually worked once
+  //   equipCheck(){ ////actually worked once
+  //   let totalAcBonus = 0;
+  //   for (let eqpiece of this.equip){
+  //     totalAcBonus += eqpiece.acBonus;
+  //     console.log(`${eqpiece.name} has an ac bonus of ${eqpiece.acBonus}, increasing total ac bonus to ${totalAcBonus}`)
+  //   }
+  //   this.baseAc += totalAcBonus;
+  //   console.log(`all equip has been checked, and after adding total ac is now ${this.baseAc}`)
+  // }
+  
+  equipCheck(){
     let totalAcBonus = 0;
-    for (let eqpiece of this.equip){
-      totalAcBonus += eqpiece.acBonus;
-      console.log(`${eqpiece.name} has an ac bonus of ${eqpiece.acBonus}, increasing total ac bonus to ${totalAcBonus}`)
+    for (let equipSlot in this.equip){
+      console.log(equipSlot)
+      for (let eqpiece of this.equip[equipSlot]){
+        console.log(`eqpiece.name:${eqpiece.name} eqpiece.acBonus:${eqpiece.acBonus}`)
+        // console.log(equipSlot[eqpiece])
+        //console.log(`totalAcBonus is currently: ${totalAcBonus}, about to add eqpiece.acBonus, which is ${eqpiece.acBonus}`)
+        totalAcBonus += eqpiece.acBonus;
+        //console.log(`After that, totalAcBonus is now: ${totalAcBonus}, after adding eqpiece.acBonus, which was ${eqpiece.acBonus}`)
+        // console.log(`${eqpiece.name} has an ac bonus of ${eqpiece.acBonus}, increasing total ac bonus to ${totalAcBonus}`)
+      }
     }
     this.baseAc += totalAcBonus;
     console.log(`all equip has been checked, and after adding total ac is now ${this.baseAc}`)
   }
-    // equipCheck(){
-    //   let totalAcBonus = 0;
-    //   let equipArray = Object.getOwnPropertyNames(this.equip);
-    //   console.log(`equipArray: ${equipArray}`)
-    //   for (let eqpiece of equipArray){
-    //     totalAcBonus += equip[eqpiece].acBonus;
-    //     console.log(`${eqpiece.name} has an ac bonus of ${eqpiece.acBonus}, increasing total ac bonus to ${totalAcBonus}`)
-    //   }
-    //   this.baseAc += totalAcBonus;
-    //   console.log(`all equip has been checked, and after adding total ac is now ${this.baseAc}`)
-    // }
-  }
+}
