@@ -2,7 +2,7 @@ import { AbilityScores } from '../src/js/character_class.js';
 
 describe('AbilityScores', () => {
   
-  test('test 1 should add ability score', () => {
+  test('test 1 should create ability score', () => {
   const ability1 = new AbilityScores (2,3,4,5,6,7,8)
   expect(ability1.str).toEqual(2)
   expect(ability1.dex).toEqual(3)
