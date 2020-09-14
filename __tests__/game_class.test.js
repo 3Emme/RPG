@@ -89,8 +89,11 @@ describe('Game', () => {
     let t13d6m5 = rpg.roll(3,6,5);
     let t23d6m5 = rpg.roll(3,6,5);
     let t33d6m5 = rpg.roll(3,6,5);
+    let t43d6m5 = rpg.roll(1,6,5,1);
     expect(t13d6m5 && t23d6m5 && t33d6m5).toBeGreaterThanOrEqual(8);
     expect(t13d6m5 && t23d6m5 && t33d6m5).toBeLessThanOrEqual(23);
+    expect(t43d6m5).toBeGreaterThanOrEqual(7);
+    expect(t43d6m5).toBeLessThanOrEqual(12);
   });
 
   test('test 14 should generate an accurate baseAc for a player based on their abilityScore.dex value', () => {
