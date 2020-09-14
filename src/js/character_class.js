@@ -62,4 +62,48 @@ export class Equip{
     this.mainHand = [],
     this.offHand = []
   }
-}
+};
+
+export class Character { 
+
+  //super(id,name,abilityScores,hp,mp,inv); ref for eventual add
+    addItemInv(item) {
+      this.inv.push (item);
+    }
+  
+    addItemEquip(item) {
+      let slot = item.slot;
+      this.equip[slot].push(item);
+    }
+  
+    abilityScoreCheck(score,target) {
+      let abilityScores = this.abilityScores
+      let checked = abilityScores[score]
+      if (checked >= target){
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    equipCheck(){ ////actually worked once
+    let totalAcBonus = 0;
+    for (let eqpiece of this.equip){
+      totalAcBonus += eqpiece.acBonus;
+      console.log(`${eqpiece.name} has an ac bonus of ${eqpiece.acBonus}, increasing total ac bonus to ${totalAcBonus}`)
+    }
+    this.baseAc += totalAcBonus;
+    console.log(`all equip has been checked, and after adding total ac is now ${this.baseAc}`)
+  }
+    // equipCheck(){
+    //   let totalAcBonus = 0;
+    //   let equipArray = Object.getOwnPropertyNames(this.equip);
+    //   console.log(`equipArray: ${equipArray}`)
+    //   for (let eqpiece of equipArray){
+    //     totalAcBonus += equip[eqpiece].acBonus;
+    //     console.log(`${eqpiece.name} has an ac bonus of ${eqpiece.acBonus}, increasing total ac bonus to ${totalAcBonus}`)
+    //   }
+    //   this.baseAc += totalAcBonus;
+    //   console.log(`all equip has been checked, and after adding total ac is now ${this.baseAc}`)
+    // }
+  }
