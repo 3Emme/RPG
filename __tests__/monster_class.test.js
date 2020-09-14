@@ -9,7 +9,7 @@ describe('Monster', () => {
     monster = new Monster(1,1,abilityScores,1,1,1,1,1,1);
   });
   
-  test('should create an monster object', () =>{    
+  test('should create a monster object', () =>{    
     expect(monster.id).toEqual(1);
     expect(monster.name).toEqual(1);
     expect(monster.abilityScores.dex).toEqual(1);
