@@ -2,10 +2,12 @@ import Game from '../src/js/game_class.js';
 
 describe('Game', () => {
     let rpg; 
-    //let player2;
+    let player1;
+    let monster1;
     beforeEach(() => {
       rpg = new Game([],[],[],[])
-    //player2 = rpg.addPlayer("jake","human","wizard","6","40","20","60","torched","30",[],[],10,10,10,10,10,10,10);
+      player1 = rpg.addPlayer("jake","human","wizard","6","40","20","60","30",[],10,10,10,10,10,10,10);
+      monster1 = rpg.addMonster(1,"Monster Jake","monster",1,8,500,[],[],10,10,10,10,10,10,10);
   });
 
   test('Test 1 should create a game object', () =>{    
@@ -21,25 +23,23 @@ describe('Game', () => {
   });
 
   test('Test 3 should create a new player', () =>{
-    let player1 = rpg.addPlayer("jake","human","wizard","6","40","20","60","torched","30",[],[],10,10,10,10,10,10,10);
     expect(player1.name).toEqual("jake")
   });
 
   test('Test 4 should add a player to an environment', () => {
-    let player1 = rpg.addPlayer("jake","human","wizard","6","40","20","60","torched","30",[],[],10,10,10,10,10,10,10);
     rpg.addEnvironment("Castle","A dusty castle, long abandoned and full of monsters and secrets.",[],[],[player1],[]);
     expect(rpg.environments[0].players[0]).toEqual(player1);
   });
 
   test('Test 5 should add a monster to an environment', () => {
-    let monster1 = rpg.addMonster("Monster Jake",1,8,500,[],[],100,[],"stats");
+    // let monster1 = rpg.addMonster("Monster Jake",1,8,500,[],[],100,[],"stats");
     rpg.addEnvironment("Castle","A dusty castle, long abandoned and full of monsters and secrets.",[],[monster1],[],[]);
     expect(rpg.environments[0].monsters[0]).toEqual(monster1);
   });
 
   test('Test 6 should add an item to a player', () => {
     let item1 = rpg.addItem("Taco",1,200,70,5,[],[],"rare");
-    let player1 = rpg.addPlayer("jake","human","wizard","6","40","20","60","torched","30",[item1],[],10,10,10,10,10,10,10);    
+    player1.addItemInv(item1);
     expect(player1.inv[0]).toEqual(item1);
   });  
 
@@ -57,16 +57,16 @@ describe('Game', () => {
   });
   
   test('test 9 add subclass weapon inside of a monster',() => {
-    let rubberChicken = rpg.addWeapon("mainHand",5,5,"Rubber chicken",1,1,10,1,[],[],"mythic rare");
-    let monster1 = rpg.addMonster("Daisy",120,50,20,[rubberChicken],"money",40,[],[]);
+    let sword = rpg.addWeapon("mainHand",5,5,"Sword",1,1,10,1,[],[],"common");
+    monster1.addItemInv(sword);
     expect(monster1.inv[0].atk).toEqual(5);
   });
 
   test('Test 10 should add an item, a player, and a monster to an environment, with items in the player and monsters inventory', () => {
     let sword = rpg.addItem("Sword",1,1,10,1,[],[],"common");
-    let player1 = rpg.addPlayer("jake","human","wizard","6","40","20","60","torched","30",[sword],[],10,10,10,10,10,10,10);
-    let monster1 = rpg.addMonster("Monster Jake",1,8,500,[sword],[],100,[],"stats");
-    rpg.addEnvironment("Castle","A dusty castle, long abandoned and full of monsters and secrets.",[sword],[monster1],[player1],[]);
+    player1.addItemInv(sword);    
+    monster1.addItemInv(sword);    
+    rpg.addEnvironment("Castle","A dusty castle, long abandoned and full of monsters and secrets.",[sword],[monster1],[player1],[]);    
     expect(rpg.environments[0].players[0].inv[0]).toEqual(rpg.environments[0].monsters[0].inv[0] && rpg.environments[0].items[0]);
   });
 
@@ -94,8 +94,8 @@ describe('Game', () => {
   });
 
   test('test 14 should generate an accurate baseAc for a player based on their abilityScore.dex value', () => {
-    let player1 = rpg.addPlayer("jake","human","wizard","6","40","20","60","torched","30",[],[],10,13,10,10,10,10,10);
-    expect(player1.baseAc).toEqual(11)
+    let player14 = rpg.addPlayer("jake","human","wizard","6","40","20","60","30",[],10,13,10,10,10,10,10);
+    expect(player14.baseAc).toEqual(11)
   });
 
   test('test 15 should update a players ac value to include the acBonus values of all items in equipment', () => {
