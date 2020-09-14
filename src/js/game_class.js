@@ -25,8 +25,9 @@ export default class Game {
     return newPlayer;
   }
   
-  addMonster(name,cr,hp,xp,inventory,equipment,mp,status,abilityScores) {
-    let newMonster = new Monster(name,cr,hp,xp,inventory,equipment,mp,status,abilityScores)
+  addMonster(id,name,mainType,cr,hp,mp,inv,behaviors,str,dex,con,wis,int,chr,lck) {
+    let abilityScores = new AbilityScores(str,dex,con,wis,int,chr,lck)
+    let newMonster = new Monster(id,name,abilityScores,mainType,cr,hp,mp,inv,behaviors)
     return newMonster;
   }
     
